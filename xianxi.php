@@ -73,7 +73,7 @@
             $pagnum=1;
             if(@$_GET['num']=="")
             {
-                $str2="SELECT * FROM pinjia WHERE CID='$id' order by tm desc limit 1, 5";
+                $str2="SELECT * FROM pinjia WHERE CID='$id' order by tm desc limit 0, 5";
             }
             
             else {
@@ -82,6 +82,7 @@
                 $str2="SELECT * FROM pinjia WHERE CID=$id order by tm desc limit $start , 5";
             }
             $result=query($str2);
+
             while($row2=mysql_fetch_assoc($result)){
                 ?>
                     <div class="huifu">
