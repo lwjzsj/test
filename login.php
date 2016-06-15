@@ -49,4 +49,11 @@ if (@$_POST["sub"] == "登陆") {
  window.location.href='index.php';
 </script>
 ";
+} else if(@$_POST["sub"]=="退出")
+{
+    session_destroy();
+    echo"<script type='text/javascript'>window.location.href='index.php';</script>";
+    echo "<script language='javascript'>
+ window.location.href='index.php';
+</script>";
 }
