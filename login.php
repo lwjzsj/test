@@ -6,6 +6,7 @@ include "conn.php";
 $name = @$_POST["name"];
 $pwd = @$_POST["pwd"];
 $tm = date("Y-m-d H:i:s");
+//登陆
 if (@$_POST["sub"] == "登陆") {
     $str = "SELECT * FROM user WHERE name='$name'";
     $result = query($str);
@@ -26,7 +27,9 @@ if (@$_POST["sub"] == "登陆") {
  window.location.href='index.php';
 </script>
 ";
-} else if (@$_POST["sub"] == "注册") {
+}
+//注册
+else if (@$_POST["sub"] == "注册") {
     $str = "INSERT INTO user(name,pwd,tm)VALUES('$name','$pwd','$tm')";
     $result = query($str);
     if ($result != false) {
@@ -49,11 +52,12 @@ if (@$_POST["sub"] == "登陆") {
  window.location.href='index.php';
 </script>
 ";
-} else if(@$_POST["sub"]=="退出")
-{
+}
+//注销
+else if (@$_POST["sub"] == "注销") {
     session_destroy();
-    echo"<script type='text/javascript'>window.location.href='index.php';</script>";
     echo "<script language='javascript'>
  window.location.href='index.php';
-</script>";
+</script>
+";
 }
