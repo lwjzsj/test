@@ -45,5 +45,5 @@
             $str_shop="INSERT INTO shop(userName,shopId,time,num)values('$u_name','$id','$tm',1)";
             $shop=query($str_shop);
         }
-        $str_shop="SELECT * FROM shop WHERE userName='$u_name'";
+
     }?>
