@@ -46,7 +46,7 @@
                 <tr><td rowspan="5" width="8"></td><td colspan="2" height="35"></td></tr>
 
                     <tr height="24">
-                    <td width="80" align="left" >用&nbsp;&nbsp;户：</td>
+                    <td width="60" align="left" >用&nbsp;&nbsp;户：</td>
 
                     <td width="120"><input type="text" name="name" class="input"></td>
                 </tr>
@@ -88,10 +88,10 @@
                         </tr>
 
                         <tr  >
-                            <td colspan="2" ><input type="submit" value="注销" name="sub" style="width:60px;"></td>
+                            <td colspan="2" ><input typt="submit" name="sub" value="退出" style="width:60px;"></td>
 
                         </tr>
-                    
+
                 </table>
                 </form>
                 <?php
