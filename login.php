@@ -49,10 +49,4 @@ if (@$_POST["sub"] == "登陆") {
  window.location.href='index.php';
 </script>
 ";
-} else if (@$_POST["sub"] == "注销") {
-    session_destroy();
-    echo "<script language='javascript'>
- window.location.href='index.php';
-</script>
-";
 }

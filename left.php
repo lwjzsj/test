@@ -2,6 +2,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php session_start();
+function logout()
+{
+    session_destroy();
+    echo"<script type='text/javascript'>window.location.href='index.php';</script>";
+}
 ?>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -41,12 +46,12 @@
             if(@$_SESSION["login"]!=true)
             {
             ?>
-                <form action="login.php" method="POST" name="fm1" onsubmit="return run(this)">
+
             <table  border="0" cellpadding="0" cellspacing="1" id="left_top">
                 <tr><td rowspan="5" width="8"></td><td colspan="2" height="35"></td></tr>
-
+                <form action="login.php" method="POST" name="fm1" onsubmit="return run(this)">
                     <tr height="24">
-                    <td width="80" align="left" >用&nbsp;&nbsp;户：</td>
+                    <td width="18" align="left" >用&nbsp;&nbsp;户：</td>
 
                     <td width="120"><input type="text" name="name" class="input"></td>
                 </tr>
@@ -69,7 +74,7 @@
                     <td colspan="2" ><input type="submit" value="登陆" name="sub"  style="width:60px;">
                     <input type="submit" value="注册" name="sub" style="width:60px;"></td>
                 </tr>
-
+                    </form>
             </table>
             <?php }
             else {
@@ -88,12 +93,11 @@
                         </tr>
 
                         <tr  >
-                            <td colspan="2" ><input type="submit" value="注销" name="sub" style="width:60px;"></td>
+                            <td colspan="2" ><button id="logout" onclick="<?php echo logout();?>" style="width:60px;">退出</button></td>
 
                         </tr>
-                    
+                    </form>
                 </table>
-                </form>
                 <?php
 
             }
